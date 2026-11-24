@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darwin Noriega Martinez | Portafolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="container py-4">
+        <div class="portfolio-wrapper shadow-sm">
+
+            <header class="row g-3 mb-3 align-items-stretch">
+
+                <div class="col-12 col-md-4 col-lg-3">
+                    <div id="contenedor-1"
+                        class="box-container header-box d-flex align-items-center justify-content-center justify-content-md-start gap-2 px-3">
+                        <i id="window-icon" class="bi bi-person-badge window-title-icon"></i>
+                        <span id="window-title" class="window-title-text">- ¿Quién soy?</span>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-md-8 col-lg-9">
+                    <div
+                        class="box-container header-box d-flex flex-wrap align-items-center justify-content-between px-4 py-2">
+                        <h1 class="author-name m-0">Darwin Noriega Martinez | Desarrollador Backend | Java</h1>
+                        <nav class="social-links d-flex gap-3" aria-label="Redes sociales">
+
+                            <a href="https://github.com/DwDarwin" target="_blank" rel="noopener noreferrer"
+                                class="social-icon" title="Repositorio GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+
+                            <a href="http://www.linkedin.com/in/darwin-noriega-mart%C3%ADnez-987a82205" target="_blank"
+                                rel="noopener noreferrer" class="social-icon" title="Perfil LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <!-- 4: Facebook -->
+                            <!--
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+                                title="Perfil Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            -->
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+
+            <section id="contenedor-5" class="box-container main-viewport mb-4 p-4">
+
+                <!--¿Quién soy? -->
+                <div id="view-quien-soy" class="content-section active">
+                    <div class="quien-soy-layout">
+                        <div class="quien-soy-media">
+                            <img src="./imagenes/perfil3.jpg" alt="Foto de perfil de Darwin Noriega Martinez"
+                                class="profile-photo">
+                        </div>
+                        <div class="quien-soy-bio">
+                            <h2 class="section-heading mb-3">Hola, soy Darwin Noriega Martinez</h2>
+                            <p class="section-text">
+                                Desarrollador de software enfocado en construir soluciones sólidas, estructuradas y
+                                funcionales.
+                                Me apasiona la arquitectura limpia, el desarrollo web, construccion de Backends y la
+                                mejora continua en cada proyecto que emprendo.
+                            </p>
+                            <p class="section-text mb-0">
+                                Mi enfoque se centra en el desarrollo de backends claros, escalables y aplicando
+                                arquitecturas a la medida de las necesidades de cada proyecto,
+                                garantizando un software que resuelva problemas reales de manera eficiente.
+                            </p>
+
+                            <div class="quien-soy-stack mt-3">
+                                <span class="stack-label d-block small fw-semibold mb-2">Tecnologías</span>
+                                <div class="d-flex flex-wrap gap-1">                                    
+                                    <span class="tech-badge">Java</span>
+                                    <span class="tech-badge">Spring Boot</span>                                    
+                                    <span class="tech-badge">JavaScript</span>
+                                    <span class="tech-badge">HTML</span>
+                                    <span class="tech-badge">CSS</span>
+                                    <span class="tech-badge">PostgreSQL</span>                                    
+                                    <span class="tech-badge">Git / GitHub</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Mis proyectos -->
+                <div id="view-proyectos" class="content-section">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2 class="section-heading m-0">Proyectos Destacados</h2>
+                        <div class="carousel-controls d-flex gap-2">
+                            <button id="prev-project" class="btn btn-nav-custom" aria-label="Proyecto anterior">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button id="next-project" class="btn btn-nav-custom" aria-label="Siguiente proyecto">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="projects-track" class="cards-slider">
+                        <!-- Se llena dinámicamente desde script.js -->
+                    </div>
+                </div>
+
+                <!--Colaboraciones-->
+                <div id="view-colaboraciones" class="content-section">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2 class="section-heading m-0">Colaboraciones</h2>
+                        <div class="carousel-controls d-flex gap-2">
+                            <button id="prev-collab" class="btn btn-nav-custom" aria-label="Colaboración anterior">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button id="next-collab" class="btn btn-nav-custom" aria-label="Siguiente colaboración">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="collabs-track" class="cards-slider">
+                        <!-- Se llena dinámicamente desde script.js -->
+                    </div>
+                </div>
+
+                <!--Mi trayectoria profesional-->
+                <div id="view-trayectoria" class="content-section">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2 class="section-heading m-0">Trayectoria Profesional</h2>
+                        <div class="carousel-controls d-flex gap-2">
+                            <button id="prev-timeline" class="btn btn-nav-custom" aria-label="Deslizar izquierda">
+                                <i class="bi bi-arrow-left"></i>
+                            </button>
+                            <button id="next-timeline" class="btn btn-nav-custom" aria-label="Deslizar derecha">
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="timeline-track" class="timeline-wrapper">
+                        <!-- Se llena dinámicamente desde script.js -->
+                    </div>
+                </div>
+
+                <!--Contáctame-->
+                <div id="view-contactame" class="content-section">
+                    <div class="row justify-content-center align-items-center h-100">
+                        <div class="col-12 col-lg-8">
+                            <h2 class="section-heading mb-2">Envíame un mensaje</h2>
+                            <p class="text-muted small mb-3">Escribe tu consulta o propuesta y te responderé a la
+                                brevedad.</p>
+                            <form id="contact-form">
+                                <div class="mb-3">
+                                    <input type="email" id="sender-email" class="form-control custom-input"
+                                        placeholder="Tu correo electrónico" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea id="sender-message" class="form-control custom-input" rows="4"
+                                        placeholder="Escribe aquí tu mensaje..." required></textarea>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span id="form-feedback" class="small text-success fw-medium"></span>
+                                    <button type="submit" class="btn btn-primary-custom px-4">
+                                        <i class="bi bi-send me-2"></i>Enviar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Proyecto de vida -->
+                <div id="view-proyecto-vida" class="content-section">
+                    <div class="d-flex flex-column h-100 justify-content-between gap-3">
+
+
+                        <div class="vision-banner d-flex align-items-center gap-3 p-3">
+                            <div class="vision-icon-box">
+                                <i class="bi bi-compass"></i>
+                            </div>
+                            <div>
+                                <span class="vision-tag">PROPÓSITO DE IMPACTO</span>
+                                <p class="section-text m-0 fw-medium">
+                                    Desarrollar software con propósito: convertir retos reales de la sociedad en
+                                    soluciones
+                                    tecnológicas eficientes y sostenibles.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="row g-3 flex-grow-1">
+                            <div class="col-12 col-md-6">
+                                <div class="vision-pillar h-100 p-3">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="bi bi-cloud-check vision-mini-icon"></i>
+                                        <h3 class="vision-pillar-title m-0">Backend y Servicios en la Nube</h3>
+                                    </div>
+                                    <p class="small text-muted mb-3">
+                                        Especializarme en desarrollo backend y arquitecturas en la nube para construir
+                                        el núcleo
+                                        lógico de sistemas seguros, escalables y de alta disponibilidad.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        <span class="tech-badge">Backend</span>
+                                        <span class="tech-badge">Cloud</span>
+                                        <span class="tech-badge">APIs &amp; Servicios</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <div class="vision-pillar h-100 p-3">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="bi bi-gear-wide-connected vision-mini-icon"></i>
+                                        <h3 class="vision-pillar-title m-0">Automatización de Procesos</h3>
+                                    </div>
+                                    <p class="small text-muted mb-3">
+                                        Integrar automatizaciones inteligentes en cada proyecto para eliminar tareas
+                                        repetitivas,
+                                        reducir errores humanos y multiplicar la productividad.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        <span class="tech-badge">Automatización</span>
+                                        <span class="tech-badge">Flujos</span>
+                                        <span class="tech-badge">Eficiencia</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <!--Selector Circular-->
+            <footer class="row align-items-center g-4 pt-2">
+
+
+                <div class="col-12 col-md-5 d-flex justify-content-center">
+                    <div class="radial-dial" role="navigation" aria-label="Selector radial de secciones">
+
+                        <div class="dial-center-hex">
+                            <i id="dial-arrow" class="bi bi-arrow-right-short"></i>
+                        </div>
+
+                        <!--Quien soy-->
+                        <button class="dial-btn active" data-target="view-quien-soy" data-title="- ¿Quién soy?"
+                            data-angle="-120" style="--angle: -120deg;" title="¿Quién soy?">
+                            <i class="bi bi-person-badge"></i>
+                        </button>
+
+                        <!--Mis proyectos-->
+                        <button class="dial-btn" data-target="view-proyectos" data-title="- Mis proyectos"
+                            data-angle="-60" style="--angle: -60deg;" title="Mis proyectos">
+                            <i class="bi bi-code-slash"></i>
+                        </button>
+
+                        <!--Colaboraciones-->
+                        <button class="dial-btn" data-target="view-colaboraciones" data-title="- Colaboraciones"
+                            data-angle="0" style="--angle: 0deg;" title="Colaboraciones">
+                            <i class="bi-people"></i>
+                        </button>
+
+                        <!--Mi trayectoria profesional-->
+                        <button class="dial-btn" data-target="view-trayectoria"
+                            data-title="- Mi trayectoria profesional" data-angle="60" style="--angle: 60deg;"
+                            title="Mi trayectoria profesional">
+                            <i class="bi bi-briefcase"></i>
+                        </button>
+
+                        <!--Contáctame-->
+                        <button class="dial-btn" data-target="view-contactame" data-title="- Contáctame"
+                            data-angle="120" style="--angle: 120deg;" title="Contáctame">
+                            <i class="bi bi-envelope-paper"></i>
+                        </button>
+
+                        <!--Proyecto de vida-->
+                        <button class="dial-btn" data-target="view-proyecto-vida" data-title="- Proyecto de vida"
+                            data-angle="180" style="--angle: 180deg;" title="Proyecto de vida">
+                            <i class="bi bi-compass"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Lista lateral sincronizada en 2 columnas-->
+                <div class="col-12 col-md-7">
+                    <ul class="nav-legend-list list-unstyled m-0">
+                        <li class="legend-item active" data-target="view-quien-soy" data-title="- ¿Quién soy?"
+                            data-angle="-120">
+                            <span class="legend-icon"><i class="bi bi-person-badge"></i></span>
+                            <span class="legend-label">¿Quién soy?</span>
+                        </li>
+                        <li class="legend-item" data-target="view-trayectoria" data-title="- Mi trayectoria profesional"
+                            data-angle="60">
+                            <span class="legend-icon"><i class="bi bi-briefcase"></i></span>
+                            <span class="legend-label">Mi trayectoria profesional</span>
+                        </li>
+                        <li class="legend-item" data-target="view-proyectos" data-title="- Mis proyectos"
+                            data-angle="-60">
+                            <span class="legend-icon"><i class="bi bi-code-slash"></i></span>
+                            <span class="legend-label">Mis proyectos</span>
+                        </li>
+                        <li class="legend-item" data-target="view-contactame" data-title="- Contáctame"
+                            data-angle="120">
+                            <span class="legend-icon"><i class="bi bi-envelope-paper"></i></span>
+                            <span class="legend-label">Contáctame</span>
+                        </li>
+                        <li class="legend-item" data-target="view-colaboraciones" data-title="- Colaboraciones"
+                            data-angle="0">
+                            <span class="legend-icon"><i class="bi-people"></i></span>
+                            <span class="legend-label">Colaboraciones</span>
+                        </li>
+                        <li class="legend-item" data-target="view-proyecto-vida" data-title="- Proyecto de vida"
+                            data-angle="180">
+                            <span class="legend-icon"><i class="bi bi-compass"></i></span>
+                            <span class="legend-label">Proyecto de vida</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </footer>
+
+        </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

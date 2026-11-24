@@ -1,0 +1,585 @@
+:root {
+    --bg-body: #e9eff6;
+    --bg-wrapper: #f4f7fb;
+    --bg-card: #ffffff;
+    --bg-subtle: #dde7f3;
+    --blue-primary: #2b547e;
+    --blue-secondary: #4a76a8;
+    --blue-accent: #1d3b58;
+    --border-color: #c5d4e6;
+    --text-main: #1e293b;
+    --text-muted: #52647a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Marco general del portafolio */
+.portfolio-wrapper {
+    background-color: var(--bg-wrapper);
+    border: 2px solid var(--bg-subtle);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+/* Contenedores estructurados */
+.box-container {
+    background-color: var(--border-color);
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+}
+
+/* Barra superior */
+.header-box {
+    min-height: 58px;
+}
+
+.window-title-text {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--blue-primary);
+    letter-spacing: 0.2px;
+}
+
+.author-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--blue-accent);
+}
+
+.social-icon {
+    color: var(--blue-primary);
+    font-size: 1.35rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icon:hover {
+    color: var(--blue-secondary);
+    transform: translateY(-2px);
+}
+
+.window-title-icon {
+    font-size: 1.05rem;
+    color: var(--blue-primary);
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Contenedor 5: Visor principal */
+.main-viewport {
+    min-height: 360px;
+    height: 360px;
+    overflow-y: auto;
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    scroll-margin-top: 20px;
+}
+
+.content-section {
+    display: none;
+    height: 100%;
+    animation: fadeInSlide 0.35s ease forwards;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--blue-accent);
+}
+
+.section-text {
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: var(--text-main);
+}
+
+/* Foto a la izquierda sin invadir el texto al crecer */
+#view-quien-soy .quien-soy-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    min-height: 100%;
+}
+
+#view-quien-soy .quien-soy-media {
+    flex: 0 0 auto;
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 36px;
+    background-color: #f8fbff;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(43, 84, 126, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px; 
+    position: relative;
+    z-index: 1;
+}
+
+#view-quien-soy .profile-avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 24px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(43, 84, 126, 0.1);
+}
+
+#view-quien-soy .quien-soy-bio {
+    flex: 1 1 0;
+    min-width: 0;
+    position: relative;
+    z-index: 2;
+}
+.quien-soy-stack .stack-label {
+    color: var(--blue-primary);
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 767.98px) {
+    .main-viewport {
+        height: auto;
+        min-height: 340px;
+    }
+
+    #view-quien-soy .quien-soy-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #view-quien-soy .quien-soy-media {
+        width: 180px;
+        height: 180px;
+        padding: 10px;
+    }
+}
+
+/* Carrusel de Tarjetas (Proyectos y Colaboraciones) */
+.cards-slider {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.project-card {
+    flex: 0 0 calc(50% - 0.5rem);
+    background-color: var(--bg-wrapper);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: var(--blue-secondary);
+    box-shadow: 0 4px 12px rgba(43, 84, 126, 0.08);
+}
+
+.project-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--blue-primary);
+}
+
+.tech-badge {
+    background-color: var(--bg-subtle);
+    color: var(--blue-accent);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+}
+
+/* Línea de Tiempo Deslizable (Trayectoria) */
+.timeline-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+    position: relative;
+    scrollbar-width: thin;
+}
+
+.timeline-item {
+    flex: 0 0 260px;
+    position: relative;
+    padding-top: 1.5rem;
+    border-top: 3px solid var(--blue-secondary);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--blue-primary);
+    border: 3px solid var(--bg-card);
+}
+
+.timeline-year {
+    display: inline-block;
+    background-color: var(--blue-primary);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+/* Botones de navegación interna */
+.btn-nav-custom {
+    background-color: var(--bg-subtle);
+    color: var(--blue-primary);
+    border: 1px solid var(--border-color);
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+.btn-nav-custom:hover {
+    background-color: var(--blue-primary);
+    color: #ffffff;
+}
+
+/* Formulario Contáctame */
+.custom-input {
+    border: 1.5px solid var(--border-color);
+    background-color: #ffffff;
+    font-size: 0.92rem;
+}
+
+.custom-input:focus {
+    border-color: var(--blue-secondary);
+    box-shadow: 0 0 0 0.2rem rgba(74, 118, 168, 0.15);
+}
+
+.btn-primary-custom {
+    background-color: var(--blue-primary);
+    color: #ffffff;
+    border: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--blue-accent);
+    color: #ffffff;
+}
+
+/* SELECTOR RADIAL (CIRCULO + HEXÁGONO) */
+.radial-dial {
+    width: 220px;
+    height: 220px;
+    border-radius: 30%;
+    background-color: var(--bg-subtle);
+    border: 2.5px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 18px rgba(43, 84, 126, 0.08);
+}
+
+/* Hexágono central */
+.dial-center-hex {
+    width: 64px;
+    height: 56px;
+    background-color: var(--blue-primary);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.dial-center-hex::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background-color: var(--blue-primary);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    z-index: -1;
+}
+
+#dial-arrow {
+    font-size: 2rem;
+    color: var(--bg-body);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    --base-angle: -120deg;
+    --hover-spin: 0deg;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
+    transform: rotate(calc(var(--base-angle) + var(--hover-spin)));
+}
+
+#dial-arrow.is-hovering {
+    transition: color 0.2s ease; /* Sin transition en transform para que el giro continuo sea fluido */
+    color: var(--bg-body);
+}
+
+#dial-arrow:hover {
+    --hover-spin: 180deg;
+    color: var(--bg-body);
+}
+
+
+.dial-center-hex {
+    width: 64px;
+    height: 56px;
+    background-color: var(--bg-body);    
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Botones periféricos con realce de tamaño al estar activos o al hacer clic */
+.dial-btn {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--bg-wrapper);
+    border: 1.5px solid var(--blue-secondary);
+    color: var(--blue-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    cursor: pointer;
+    --btn-scale: 1;
+    transform: rotate(var(--angle)) translate(74px) rotate(calc(-1 * var(--angle))) scale(var(--btn-scale));
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+                background-color 0.25s ease,
+                border-color 0.25s ease,
+                color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.dial-btn:hover {
+    --btn-scale: 1.08;
+    background-color: var(--bg-subtle);
+    border-color: var(--blue-accent);
+}
+
+.dial-btn.active {
+    --btn-scale: 1.2;
+    background-color: var(--blue-primary);
+    color: var(--bg-subtle);
+    border-color: var(--blue-accent);
+    box-shadow: 0 0 14px rgba(43, 84, 126, 0.45);
+}
+
+.dial-btn:active {
+    --btn-scale: 0.94;
+}
+
+.dial-btn.active:active {
+    --btn-scale: 1.12;
+}
+
+
+/* Lista lateral sincronizada en 2 columnas */
+.nav-legend-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: column;
+    column-gap: 2.25rem;
+    row-gap: 1.15rem;
+    max-width: 100%;
+    align-items: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.legend-item:hover {
+    background-color: var(--bg-subtle);
+}
+
+.legend-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1.5px solid var(--blue-secondary);
+    background-color: var(--bg-card);
+    color: var(--blue-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.legend-label {
+    font-size: 0.96rem;
+    font-weight: 500;
+    color: var(--text-main);
+    white-space: nowrap;
+}
+
+.legend-item.active {
+    background-color: var(--bg-subtle);
+}
+
+.legend-item.active .legend-icon {
+    background-color: var(--blue-primary);
+    color: #ffffff;
+    border-color: var(--blue-accent);
+}
+
+.legend-item.active .legend-label {
+    font-weight: 700;
+    color: var(--blue-accent);
+}
+
+/* Sección Proyecto de Vida: tablero de visión por pilares */
+.vision-banner {
+    background-color: var(--bg-wrapper);
+    border: 1.5px solid var(--border-color);
+    border-left: 4px solid var(--blue-primary);
+    border-radius: 8px;
+}
+
+.vision-icon-box {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background-color: var(--bg-subtle);
+    color: var(--blue-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+}
+
+.vision-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: var(--blue-secondary);
+    margin-bottom: 0.15rem;
+}
+
+.vision-pillar {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vision-pillar:hover {
+    border-color: var(--blue-secondary);
+    box-shadow: 0 4px 12px rgba(43, 84, 126, 0.08);
+}
+
+.vision-mini-icon {
+    font-size: 1.2rem;
+    color: var(--blue-primary);
+}
+
+.vision-pillar-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--blue-accent);
+}
+
+@media (max-width: 767.98px) {
+    .main-viewport {
+        height: auto;
+        min-height: 340px;
+    }
+
+    .project-card {
+        flex: 0 0 90%;
+    }
+
+    .nav-legend-list {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .nav-legend-list {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-auto-flow: row;
+        row-gap: 0.65rem;
+    }
+
+    .legend-label {
+        white-space: normal;
+    }
+}
